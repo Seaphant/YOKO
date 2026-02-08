@@ -7,7 +7,7 @@ A CAD-designed, 3D-printed five-finger robotic hand with multi-joint fingers and
 **Homemade / iterative (3D-printed prototype)**  
 ![YOKO appearance](docs/images/yoko-appearance.png)
 
-**CAD screenshots **  
+CAD screenshots   
 | View 1 | View 2 |
 |--------|--------|
 | ![YOKO CAD screenshot 1](docs/images/yoko-cad-screenshot-1.png) | ![YOKO CAD screenshot 2](docs/images/yoko-cad-screenshot-2.png) |
