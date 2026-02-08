@@ -1,6 +1,5 @@
 # YOKO — Images
 
-Conceptual images of the YOKO robotic hand: homemade/iterative build and CAD-style viewport screenshots.
 
 ---
 
