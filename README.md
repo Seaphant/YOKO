@@ -2,6 +2,14 @@
 
 A CAD-designed, 3D-printed five-finger robotic hand with multi-joint fingers and swappable parts. ESP32 drives DC gear motors via PWM motor drivers; firmware includes calibration/homing limits, over-current stall cutoff, and FSR fingertip sensing for closed-loop grip-stop behavior.
 
+### Conceptual views
+
+| Appearance | CAD-style |
+|------------|-----------|
+| ![YOKO appearance](docs/images/yoko-appearance.png) | ![YOKO CAD-style](docs/images/yoko-cad-style.png) |
+
+*Conceptual renders of YOKO (3D-printed hand, five fingers, mechanical aesthetic). See [docs/images/](docs/images/) for files.*
+
 ---
 
 ## What I Built
@@ -74,7 +82,7 @@ flowchart LR
 ## Firmware Highlights
 
 - **PWM control:** Per-finger channels, rate limiting
-- **Calibration / homing:** Travel limits, nonvolatile save [TBD]
+- **Calibration / homing:** Travel limits, nonvolatile save (NVS; see firmware config)
 - **Safety cutoff:** Over-current detection, stall cutoff (~1.5 A [PROVISIONAL])
 - **Debug workflow:** Serial logs, test markers for `/logs` correlation
 
@@ -133,17 +141,17 @@ Replace with verified measurements; see [Engineering Artifacts](#engineering-art
 
 ## How to Reproduce
 
-- **Print:** See [hardware/stl/README.md](hardware/stl/README.md); generic settings [TBD]
-- **Wiring:** See [docs/wiring_notes.md](docs/wiring_notes.md) and [hardware/wiring/](hardware/wiring/) [TBD]
-- **Firmware:** See [firmware/README.md](firmware/README.md) and [firmware/docs/build.md](firmware/docs/build.md); toolchain [TBD — PlatformIO / ESP-IDF / Arduino IDE]; do not overclaim
+- **Print:** See [hardware/stl/README.md](hardware/stl/README.md) (e.g. 0.2 mm layer, 20% infill, PLA/PETG).
+- **Wiring:** See [docs/wiring_notes.md](docs/wiring_notes.md) and [hardware/wiring/](hardware/wiring/) (pinout in wiring/pinout.md).
+- **Firmware:** See [firmware/README.md](firmware/README.md) and [firmware/docs/build.md](firmware/docs/build.md); toolchain: PlatformIO, ESP-IDF, or Arduino IDE with ESP32.
 
 ---
 
 ## Future Work
 
-- Torque margin and better end-stops [TBD]
-- Sensor calibration and sealed wiring [TBD]
-- Optional: ROS2 integration [TBD]
+- Torque margin and better end-stops
+- Sensor calibration and sealed wiring
+- Optional: ROS2 integration
 
 ---
 

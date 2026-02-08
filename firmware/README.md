@@ -28,7 +28,7 @@ ESP32 firmware for the YOKO robotic hand: PWM motor control, calibration/homing,
 | Module | Role |
 |--------|------|
 | **motor_control** | PWM to drivers, per-finger channels, rate limiting |
-| **calibration** | Homing routine, travel limits, nonvolatile save [TBD] |
+| **calibration** | Homing routine, travel limits, NVS save (config.h) |
 | **safety** | Over-current detection, stall cutoff (~1.5 A [PROVISIONAL]) |
 | **sensors** | FSR read, grip-stop threshold |
 | **logging** | Serial debug, test markers for `/logs` |

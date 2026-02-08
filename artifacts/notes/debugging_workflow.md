@@ -6,8 +6,8 @@ How debugging and validation are done: serial logs, test markers, and correlatio
 
 ## Serial Debug
 
-- **Tool:** USB/serial from ESP32; baud rate [TBD].
-- **Content:** Banner on boot; state changes (idle, homing, running, fault); PWM or duty summaries [TBD]; FSR raw or scaled [TBD].
+- **Tool:** USB/serial from ESP32; baud rate 115200 (config.h).
+- **Content:** Banner on boot; state changes (idle, homing, running, fault); optional PWM/duty or FSR raw in debug mode.
 - **Use:** Confirm power-on, homing completion, and fault conditions during tests.
 
 ## Test Markers

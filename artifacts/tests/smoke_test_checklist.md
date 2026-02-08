@@ -6,9 +6,9 @@ Quick post-assembly or post-change check: power-on, homing, cutoff, and basic be
 
 ## Pre-Test
 
-- [ ] Power disconnected; serial cable connected; baud set [TBD]
+- [ ] Power disconnected; serial cable connected; baud 115200
 - [ ] Moving parts and cables clear of pinch points
-- [ ] Battery / supply within spec [TBD]
+- [ ] Battery / supply within driver spec
 
 ---
 
@@ -22,7 +22,7 @@ Quick post-assembly or post-change check: power-on, homing, cutoff, and basic be
 
 ### 2. Homing routine
 
-- [ ] Start homing (command or auto [TBD])
+- [ ] Start homing (command or auto on boot; see firmware)
 - [ ] All fingers drive toward limit
 - [ ] Travel stops at limits; no continuous grinding or stall during homing
 - [ ] Note any binding or uneven motion in `/logs`
@@ -40,7 +40,7 @@ Quick post-assembly or post-change check: power-on, homing, cutoff, and basic be
 - [ ] No binding at full range of motion
 - [ ] No excessive motor or driver heat after 2–3 open/close cycles
 - [ ] No unexpected grinding or clicking
-- [ ] If any issue: note in `/logs` with finger/joint and next steps (tolerances, lubrication, cooling [TBD])
+- [ ] If any issue: note in `/logs` with finger/joint and next steps (tolerances, lubrication, cooling)
 
 ---
 

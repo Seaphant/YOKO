@@ -15,7 +15,7 @@ Test plan templates and procedures. No numbers required in templates; fill with 
 - **Record:** Trigger current, recovery time, any fault codes or serial messages
 
 ### Range of motion
-- **Per finger:** Travel (degrees [TBD]), repeatability notes
+- **Per finger:** Travel (degrees; measure and document in /logs), repeatability notes
 - **Record:** Homing consistency, binding points, backlash
 
 ### Grasp trials

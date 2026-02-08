@@ -20,13 +20,13 @@ Verify stall detection, cutoff trigger, and recovery path. Safe, brief stall onl
 2. Command one finger to close (or open).
 3. Apply safe, brief jam (e.g. block motion with finger or tool).
 4. **Expected:** Current rises; cutoff triggers; PWM disabled or driver in safe state.
-5. **Record:** Serial fault/cutoff message; current at trigger if measured [TBD].
+5. **Record:** Serial fault/cutoff message; current at trigger if measured (see current_draw_procedure).
 6. Note: Stall cutoff threshold ~1.5 A [PROVISIONAL] — replace with measured value in `/logs`.
 
 ### 2. Recovery
 
 1. Release jam.
-2. Clear fault (command or auto [TBD]).
+2. Clear fault (command or auto; see firmware safety_clear_fault).
 3. **Expected:** System returns to idle or allows re-homing.
 4. Re-run homing; confirm limits still respected.
 5. **Record:** Recovery path and time in `/logs`.
@@ -34,7 +34,7 @@ Verify stall detection, cutoff trigger, and recovery path. Safe, brief stall onl
 ### 3. Repeat (optional)
 
 - Repeat for other fingers to confirm per-channel cutoff.
-- Do not hold stall; allow cooldown if needed [TBD].
+- Do not hold stall; allow cooldown if needed (e.g. 5–10 s before retry).
 
 ---
 

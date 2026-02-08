@@ -15,8 +15,8 @@ Mechanical and electrical hardware: CAD, STL (3D-print), and wiring. 3D-printed 
 
 | Path | Contents |
 |------|----------|
-| `cad/` | CAD workflow, file naming, export to STL (no proprietary files in repo [TBD]) |
-| `stl/` | STL list, print settings [TBD], orientation and support notes |
+| `cad/` | CAD workflow, file naming, export to STL (proprietary CAD files optional in repo) |
+| `stl/` | STL list, print settings (see stl/README.md), orientation and support notes |
 | `wiring/` | Pinout, connectors, wiring checklist, diagram references |
 
 ---

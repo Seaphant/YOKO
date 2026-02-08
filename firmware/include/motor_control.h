@@ -12,7 +12,7 @@
 /* Initialize PWM pins and driver state */
 void motor_control_init(void);
 
-/* Set target duty for one finger. Channel 0..FINGER_COUNT-1; duty in range [TBD] */
+/* Set target duty for one finger. Channel 0..FINGER_COUNT-1; duty 0..255 (8-bit) */
 void motor_control_set_duty(int channel, int duty);
 
 /* Update outputs with rate limiting (call from main loop) */

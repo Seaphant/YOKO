@@ -51,4 +51,4 @@ flowchart LR
 
 ---
 
-*Evidence: PWM and channel layout. Exact frequency/duty resolution [TBD]. See firmware when populated.*
+*Evidence: PWM and channel layout. 1 kHz, 8-bit in config.h; see firmware.*
