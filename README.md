@@ -144,5 +144,5 @@ Replace with verified measurements; see [Engineering Artifacts](#engineering-art
 
 ## Contact
 
-- **GitHub:** [TBD]
-- **LinkedIn:** [TBD]
+- **GitHub:** [Seaphant](https://github.com/Seaphant)
+- **LinkedIn:** [William Nguyen](https://www.linkedin.com/in/william-nguyen-6046633aa/)
