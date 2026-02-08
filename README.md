@@ -121,8 +121,8 @@ Replace with verified measurements; see [Engineering Artifacts](#engineering-art
 
 | Path | Contents |
 |------|----------|
-| `firmware/` | Source, headers, firmware docs |
-| `hardware/` | CAD, STL, wiring |
+| `firmware/` | ESP32 code: `src/` (main, motor_control, calibration, safety, sensors, logging), `include/`, `docs/` (build, serial, modules) |
+| `hardware/` | `cad/` (workflow, part naming), `stl/` (print settings, part list), `wiring/` (pinout, checklist) |
 | `docs/` | Architecture, wiring, testing, BOM template |
 | `logs/` | Test log template and example/sample logs |
 | `artifacts/diagrams/` | System, finger, power, homing, grip-stop, PWM (Mermaid + ASCII) |
@@ -133,9 +133,9 @@ Replace with verified measurements; see [Engineering Artifacts](#engineering-art
 
 ## How to Reproduce
 
-- **Print:** Generic settings [TBD]
-- **Wiring:** See [docs/wiring_notes.md](docs/wiring_notes.md) [TBD]
-- **Firmware toolchain:** [TBD — PlatformIO / ESP-IDF / Arduino IDE]; do not overclaim
+- **Print:** See [hardware/stl/README.md](hardware/stl/README.md); generic settings [TBD]
+- **Wiring:** See [docs/wiring_notes.md](docs/wiring_notes.md) and [hardware/wiring/](hardware/wiring/) [TBD]
+- **Firmware:** See [firmware/README.md](firmware/README.md) and [firmware/docs/build.md](firmware/docs/build.md); toolchain [TBD — PlatformIO / ESP-IDF / Arduino IDE]; do not overclaim
 
 ---
 
