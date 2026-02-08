@@ -2,10 +2,6 @@
 
 A CAD-designed, 3D-printed five-finger robotic hand with multi-joint fingers and swappable parts. ESP32 drives DC gear motors via PWM motor drivers; firmware includes calibration/homing limits, over-current stall cutoff, and FSR fingertip sensing for closed-loop grip-stop behavior.
 
-### Conceptual views
-
-**Homemade / iterative (3D-printed prototype)**  
-![YOKO appearance](docs/images/yoko-appearance.png)
 
 CAD screenshots   
 | View 1 | View 2 |
