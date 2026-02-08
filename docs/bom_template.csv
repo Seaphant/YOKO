@@ -1,0 +1,9 @@
+Item,Qty,Notes,Link,Cost
+ESP32 dev board,1,Main MCU,[TBD],[TBD]
+DC gear motor,5,One per finger,[TBD],[TBD]
+Motor driver,5,Or multi-channel board,[TBD],[TBD]
+FSR,5,Fingertip sensing,[TBD],[TBD]
+Wiring / cable,1,Bulk,[TBD],[TBD]
+Battery,1,Main supply,[TBD],[TBD]
+Fasteners,1,Assorted,[TBD],[TBD]
+3D filament,1,Print material,[TBD],[TBD]

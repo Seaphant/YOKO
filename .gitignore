@@ -1,0 +1,68 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+.directory
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-*
+
+# Build / Toolchain
+.pio/
+.pioenvs/
+.piobuild/
+build/
+*.o
+*.elf
+*.bin
+*.hex
+*.map
+*.d
+*.a
+*.so
+
+# Arduino
+*.ino.cpp
+*.ino.eep
+*.ino.with_bootloader.*
+
+# ESP-IDF
+managed_components/
+dependencies.lock
+
+# Node (if any tooling)
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+*.egg-info/
+.eggs/
+
+# Logs (local / generated; repo logs/ is for committed templates)
+*.log
+*.tmp
+*.temp
+.cache/
+
+# Misc
+*.bak
+*.backup
