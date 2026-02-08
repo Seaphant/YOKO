@@ -110,7 +110,10 @@ Replace with verified measurements; see [Engineering Artifacts](#engineering-art
 
 - **[/docs](docs/)** — Architecture, wiring notes, testing/validation, BOM template
 - **[/logs](logs/)** — Test log template, smoke test example, baseline metrics (sample/provisional)
-- **[/artifacts](artifacts/)** — Diagrams, tests, notes (ASCII/Mermaid)
+- **[/artifacts](artifacts/)** — Diagrams, notes, and test procedures (ASCII/Mermaid; no photo dependency)
+  - **[/artifacts/diagrams](artifacts/diagrams)** — System block, finger linkage, power/wiring, homing state machine, FSR grip-stop flow, PWM control
+  - **[/artifacts/notes](artifacts/notes)** — Design iterations, debugging workflow, calibration, safety cutoff, mechanical tolerances
+  - **[/artifacts/tests](artifacts/tests)** — Smoke test checklist, current-draw procedure, grasp trial procedure, stall/recovery procedure, regression checklist
 
 ---
 
@@ -122,7 +125,9 @@ Replace with verified measurements; see [Engineering Artifacts](#engineering-art
 | `hardware/` | CAD, STL, wiring |
 | `docs/` | Architecture, wiring, testing, BOM template |
 | `logs/` | Test log template and example/sample logs |
-| `artifacts/` | Diagrams, test artifacts, notes |
+| `artifacts/diagrams/` | System, finger, power, homing, grip-stop, PWM (Mermaid + ASCII) |
+| `artifacts/notes/` | Design, debugging, calibration, safety, tolerances |
+| `artifacts/tests/` | Smoke, current draw, grasp, stall/recovery, regression procedures |
 
 ---
 
