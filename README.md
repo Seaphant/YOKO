@@ -110,7 +110,7 @@ Replace with verified measurements; see [Engineering Artifacts](#engineering-art
 
 - **[/docs](docs/)** — Architecture, wiring notes, testing/validation, BOM template
 - **[/logs](logs/)** — Test log template, smoke test example, baseline metrics (sample/provisional)
-- **[/artifacts](artifacts/)** — Diagrams, tests, notes (ASCII/Mermaid, no photo dependency)
+- **[/artifacts](artifacts/)** — Diagrams, tests, notes (ASCII/Mermaid)
 
 ---
 
