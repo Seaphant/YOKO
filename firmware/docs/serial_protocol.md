@@ -1,13 +1,13 @@
 # YOKO — Serial Protocol / Debug Output
 
-Serial output format for debugging and correlation with repo `/logs`. Baud [TBD] (default 115200 in config.h).
+Serial output format for debugging and correlation with repo `/logs`. Baud: 115200 (config.h SERIAL_BAUD).
 
 ---
 
 ## Banner (on boot)
 
 ```text
-YOKO v[TBD] [build info]
+YOKO v0.1 [build info]
 ```
 
 - Printed once after `logging_banner()`.
@@ -41,11 +41,11 @@ STATE <state>
 
 ---
 
-## Debug [TBD]
+## Debug
 
 - Optional: current (mA), duty per channel, FSR raw values.
-- Format [TBD] — e.g. `DEBUG current=1200 duty=128,128,... fsr=100,200,...`
-- Enable/disable via compile flag or runtime [TBD].
+- Format example: `DEBUG current=1200 duty=128,128,... fsr=100,200,...`
+- Enable/disable via compile flag (e.g. `LOG_DEBUG`) or runtime command.
 
 ---
 

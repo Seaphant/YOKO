@@ -13,18 +13,18 @@ Conceptual modules for the robotic hand control system.
 
 ### calibration
 - Homing routine and travel limits
-- Nonvolatile save of limits [TBD]
+- Nonvolatile save of limits (NVS; see firmware config.h)
 - Used at startup and after mechanical changes
 
 ### safety
 - Over-current detection and stall cutoff
 - Stall cutoff threshold: ~1.5 A [PROVISIONAL]
-- Thermal cooldown [TBD]
+- Thermal cooldown (optional; not yet implemented)
 - Isolates moving parts; disconnect power before mechanical work
 
 ### sensors
 - FSR fingertips for closed-loop grip stop
-- Optional expansion (e.g., position, temperature) [TBD]
+- Optional expansion (e.g., position, temperature) for future use
 
 ### logging
 - Serial debug output
@@ -68,4 +68,4 @@ flowchart TB
 ## Notes
 
 - All current/threshold values are [PROVISIONAL] until verified; see `/logs` and `docs/testing_validation.md`.
-- Replace [TBD] items as design and toolchain are finalized.
+- Update pinout and config as your wiring and toolchain are finalized.

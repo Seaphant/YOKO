@@ -32,7 +32,7 @@
 5. **Next steps checklist**
    - [ ] Tolerances: check joint clearance if binding observed
    - [ ] Lubrication: add if needed per joint type
-   - [ ] Driver cooling: verify thermals under repeated load [TBD]
+   - [ ] Driver cooling: verify thermals under repeated load
 
 ---
 

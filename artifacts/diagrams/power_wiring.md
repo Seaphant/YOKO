@@ -43,5 +43,5 @@ flowchart LR
 ## Notes
 
 - Strain relief at connectors and flex points (see `docs/wiring_notes.md`).
-- Current measurement: inline meter or shunt [TBD] for no-load vs peak vs stall tests.
+- Current measurement: inline meter or shunt for no-load vs peak vs stall tests (see artifacts/tests/current_draw_procedure.md).
 - No specific part numbers; diagram is structural only.

@@ -50,5 +50,5 @@ Keep wires short where possible; use strain relief at connectors and moving join
 
 ## Status
 
-- Specific part numbers, wire gauges, and connector types: [TBD] until confirmed
+- Specific part numbers, wire gauges, and connector types: document in BOM and pinout when confirmed
 - See `/logs` for test dates and results; see `bom_template.csv` for BOM placeholders.

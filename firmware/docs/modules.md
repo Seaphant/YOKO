@@ -9,7 +9,7 @@ Short overview of each module; full architecture in repo root `docs/architecture
 - **Path:** `../src/motor_control.cpp`, `../include/motor_control.h`
 - **Role:** PWM to motor drivers; per-finger channels; rate limiting to smooth motion and limit peak current.
 - **API:** `motor_control_init()`, `motor_control_set_duty(channel, duty)`, `motor_control_update()`, `motor_control_stop_all()`.
-- **Config:** FINGER_COUNT, PWM frequency/resolution [TBD] in `config.h`.
+- **Config:** FINGER_COUNT, PWM_FREQ_HZ (1 kHz), PWM_RESOLUTION_BITS (8) in `config.h`.
 - **Diagram:** `../../artifacts/diagrams/pwm_control_timing.md`
 
 ---
@@ -17,7 +17,7 @@ Short overview of each module; full architecture in repo root `docs/architecture
 ## calibration
 
 - **Path:** `../src/calibration.cpp`, `../include/calibration.h`
-- **Role:** Homing routine; travel limits; optional NVS save [TBD].
+- **Role:** Homing routine; travel limits; NVS save (NVS_NAMESPACE, NVS_KEY_LIMITS in config.h).
 - **State machine:** Idle → HomingRequest → MovingToLimit → AtLimit → HomingComplete (or Fault on over-current).
 - **API:** `calibration_init()`, `calibration_start_homing()`, `calibration_update()`, `calibration_is_ready()`, `calibration_get_state()`.
 - **Diagram:** `../../artifacts/diagrams/homing_state_machine.md`

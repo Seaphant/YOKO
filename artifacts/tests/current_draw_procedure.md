@@ -31,7 +31,7 @@ Measure no-load and under-load current per motor (or per driver). Used to replac
 
 ### Under-load / peak current
 
-1. Same setup; apply defined load (e.g. grasp object, or resistive load [TBD]).
+1. Same setup; apply defined load (e.g. grasp object, or resistive load per driver spec).
 2. Record peak and steady-state current.
 3. Note: Peak-load current per motor ~1.4 A [PROVISIONAL] — replace with measured value.
 

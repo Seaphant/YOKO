@@ -1,55 +1,55 @@
 # YOKO — Pinout
 
-ESP32 pin assignments for motor drivers (PWM), FSR (ADC), and optional current sense. Replace [TBD] with actual pins when finalized.
+ESP32 pin assignments for motor drivers (PWM), FSR (ADC), and optional current sense. Example pins below; set per your wiring and driver/board.
 
 ---
 
 ## Motor Drivers (PWM)
 
-| Finger | ESP32 GPIO [TBD] | Driver pin [TBD] | Notes |
-|--------|------------------|------------------|------|
-| Thumb  | [TBD]            | [TBD]            | PWM 1 |
-| Index  | [TBD]            | [TBD]            | PWM 2 |
-| Middle | [TBD]            | [TBD]            | PWM 3 |
-| Ring   | [TBD]            | [TBD]            | PWM 4 |
-| Pinky  | [TBD]            | [TBD]            | PWM 5 |
+| Finger | ESP32 GPIO (example) | Driver pin | Notes |
+|--------|----------------------|------------|-------|
+| Thumb  | 25                   | PWM IN 1   | PWM 1; 1 kHz, 8-bit (see config.h) |
+| Index  | 26                   | PWM IN 2   | PWM 2 |
+| Middle | 27                   | PWM IN 3   | PWM 3 |
+| Ring   | 32                   | PWM IN 4   | PWM 4 |
+| Pinky  | 33                   | PWM IN 5   | PWM 5 |
 
-- **PWM frequency / resolution:** [TBD]; set in `../../firmware/include/config.h`.
-- **Driver type:** [TBD] — direction vs single PWM per channel; adjust firmware if needed.
+- **PWM frequency / resolution:** 1 kHz, 8-bit in `../../firmware/include/config.h` (PWM_FREQ_HZ, PWM_RESOLUTION_BITS).
+- **Driver type:** Single PWM per channel (speed) or dual PWM (direction + speed); adjust firmware if using direction pins.
 
 ---
 
 ## FSR (ADC)
 
-| Finger | ESP32 ADC / GPIO [TBD] | Notes |
-|--------|------------------------|------|
-| Thumb  | [TBD]                  | FSR 1 |
-| Index  | [TBD]                  | FSR 2 |
-| Middle | [TBD]                  | FSR 3 |
-| Ring   | [TBD]                  | FSR 4 |
-| Pinky  | [TBD]                  | FSR 5 |
+| Finger | ESP32 ADC / GPIO (example) | Notes |
+|--------|---------------------------|-------|
+| Thumb  | 34 (ADC1_CH6)             | FSR 1 |
+| Index  | 35 (ADC1_CH7)             | FSR 2 |
+| Middle | 36 (ADC1_CH0)             | FSR 3 |
+| Ring   | 39 (ADC1_CH3)             | FSR 4 |
+| Pinky  | 4  (ADC2_CH0)             | FSR 5 (ADC2 if WiFi not used) |
 
-- **Grip-stop threshold:** [TBD] in firmware `sensors.cpp` / config.
+- **Grip-stop threshold:** 512 (0–1023 raw) in firmware `sensors.cpp` / config.h (FSR_GRIP_STOP_THRESHOLD).
 
 ---
 
 ## Power and Ground
 
-| Signal | ESP32 | Driver / FSR |
-|--------|-------|---------------|
-| GND    | GND   | Common GND    |
-| VIN (logic) | [TBD] 3.3 V or 5 V | Driver logic, FSR [TBD] |
-| Motor VIN   | —     | Battery via fuse [TBD] |
+| Signal    | ESP32   | Driver / FSR        |
+|-----------|---------|----------------------|
+| GND       | GND     | Common GND           |
+| VIN (logic) | 3.3 V   | Driver logic; FSR VCC (3.3 V typical) |
+| Motor VIN | —       | Battery via fuse (e.g. 5–12 V per driver spec) |
 
 ---
 
 ## Optional: Current Sense
 
-- **Shunt + ADC:** [TBD] pin and channel for current sense (safety cutoff).
-- **Driver fault pin:** [TBD] if driver has fault output.
+- **Shunt + ADC:** e.g. GPIO 38 (ADC1) for shunt voltage; scale to mA in firmware.
+- **Driver fault pin:** If driver has FAULT output, connect to GPIO and read in safety module.
 
 ---
 
 ## Sync with Firmware
 
-After finalizing pins, update `../../firmware/include/config.h` and any pin #defines in `motor_control.cpp`, `sensors.cpp`, `safety.cpp`. Document here and in wiring checklist.
+After finalizing pins, add `#define PWM_PIN_*` and `FSR_PIN_*` in `../../firmware/include/config.h` (or in .cpp) and use in `motor_control.cpp`, `sensors.cpp`, `safety.cpp`. Document here and in wiring checklist.

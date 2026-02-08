@@ -13,12 +13,12 @@ CAD workflow, file naming, and export to STL for 3D printing. CAD-designed hand 
 
 ---
 
-## File Naming [TBD]
+## File Naming
 
 Suggested convention; adjust to match your tool:
 
 - **Part type:** `yoko_<part>_v<version>.stl` — e.g. `yoko_phalanx_prox_v1.stl`, `yoko_joint_index_v2.stl`
-- **Assembly:** [TBD] — e.g. `yoko_assembly_palm.step` for reference only
+- **Assembly:** e.g. `yoko_assembly_palm.step` for reference only (export from CAD)
 - **Version:** Increment when tolerance or geometry changes; note in `/logs` or `../artifacts/notes/design_iterations.md`
 
 ---
@@ -28,7 +28,7 @@ Suggested convention; adjust to match your tool:
 | Part category | Description | Notes |
 |---------------|-------------|-------|
 | Phalanx (prox/mid/dist) | Finger segments | Per finger; swappable |
-| Joint | Pin/bearing/boss | Clearance [TBD]; reduce binding |
+| Joint | Pin/bearing/boss | Clearance per iteration; reduce binding (document in /logs) |
 | Motor mount | Per finger | Driver/motor attachment |
 | Palm / base | Hand base | Cable routing, strain relief |
 | Connector / strain relief | Wiring | See `../wiring/` |

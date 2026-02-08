@@ -27,7 +27,7 @@ Conceptual layout of one finger: multi-joint, linkage, and motor attachment. Use
          linkage in
             |
     +-------v-------+
-    |   Bearing /   |   ← clearance [TBD]; tune to reduce binding
+    |   Bearing /   |   ← clearance per iteration; tune to reduce binding
     |   Pin / Boss  |   ← backlash reduced by iteration
     +-------^-------+
             |

@@ -8,12 +8,12 @@ Notes on over-current detection, stall cutoff, and safe operation.
 
 - **Purpose:** Detect stall or excessive current; disable drive to protect hardware and allow recovery.
 - **Threshold:** ~1.5 A [PROVISIONAL] per motor or per driver; to be replaced with verified value (see `/logs`).
-- **Behavior:** When current exceeds threshold, PWM disabled or drivers put in safe state; fault reported (e.g. serial); recovery path [TBD] (e.g. clear fault, re-homing).
+- **Behavior:** When current exceeds threshold, PWM disabled or drivers put in safe state; fault reported (e.g. serial); recovery path: clear fault, then re-homing.
 - **Evidence:** Manual jam applied in testing; cutoff triggers; recovery confirmed (see smoke test in `/logs`).
 
 ## Thermal Cooldown
 
-- **Status:** [TBD] — thermal cooldown or derating not yet implemented.
+- **Status:** Thermal cooldown or derating not yet implemented; optional future addition.
 - **Future:** Monitor driver/MCU temperature; reduce duty or pause if over limit.
 
 ## Safe Operation

@@ -8,7 +8,7 @@ Pinout, connectors, and wiring checklist. Power path: battery → fuse [recommen
 
 | File | Description |
 |------|-------------|
-| **pinout.md** | ESP32 pins to drivers, FSR, power; [TBD] until finalized |
+| **pinout.md** | ESP32 pins to drivers, FSR, power (example pins; set per your wiring) |
 | **wiring_checklist.md** | Pre-assembly and continuity checklist |
 
 ---
@@ -17,7 +17,7 @@ Pinout, connectors, and wiring checklist. Power path: battery → fuse [recommen
 
 - **Battery +** → Fuse / current limit [recommended] → Motor drivers (VIN) → Motors
 - **Battery -** → Common GND → ESP32 GND, driver GND
-- **Signal:** ESP32 GPIO (PWM) → Driver enable/direction [TBD]; FSR → ESP32 ADC [TBD]
+- **Signal:** ESP32 GPIO (PWM) → Driver enable/direction; FSR → ESP32 ADC (see pinout.md)
 
 Full diagram: `../../artifacts/diagrams/power_wiring.md`. Safety and measurement: `../../docs/wiring_notes.md`.
 
@@ -35,5 +35,5 @@ Full diagram: `../../artifacts/diagrams/power_wiring.md`. Safety and measurement
 
 - **Wiring notes:** `../../docs/wiring_notes.md`
 - **Power diagram:** `../../artifacts/diagrams/power_wiring.md`, `system_block.md`
-- **Firmware config:** `../../firmware/include/config.h` (pins [TBD])
+- **Firmware config:** `../../firmware/include/config.h` (pins; sync with pinout.md)
 - **BOM:** `../../docs/bom_template.csv`

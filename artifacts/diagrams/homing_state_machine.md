@@ -14,9 +14,9 @@ stateDiagram-v2
   MovingToLimit --> AtLimit: limit reached
   AtLimit --> MovingToLimit: next finger / axis
   AtLimit --> HomingComplete: all limits done
-  HomingComplete --> Idle: save limits [TBD]
+  HomingComplete --> Idle: save limits (NVS)
   MovingToLimit --> Fault: over-current / stall
-  Fault --> Idle: clear fault, retry [TBD]
+  Fault --> Idle: clear fault, retry
 ```
 
 ---

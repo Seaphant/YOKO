@@ -7,7 +7,7 @@ Notes on homing routine, travel limits, and calibration workflow.
 ## Homing Routine
 
 - **Purpose:** Establish known position (limits) for each finger before normal operation.
-- **Behavior:** Drive each finger toward limit (e.g. open or closed end); detect limit; stop; optionally repeat for other end [TBD].
+- **Behavior:** Drive each finger toward limit (e.g. open or closed end); detect limit; stop; optionally repeat for other end.
 - **Evidence:** Homing routine completes; limits respected (see smoke test in `/logs`).
 - **Diagram:** `artifacts/diagrams/homing_state_machine.md`.
 
@@ -15,16 +15,16 @@ Notes on homing routine, travel limits, and calibration workflow.
 
 - **Definition:** Min/max position or angle per finger [TBD units].
 - **Use:** Prevent over-travel; define "open" and "closed" for grasp trials.
-- **Storage:** Nonvolatile save [TBD] so limits persist across power cycles.
+- **Storage:** Nonvolatile save (NVS; firmware config.h NVS_NAMESPACE, NVS_KEY_LIMITS) so limits persist across power cycles.
 - **Update:** Re-run homing after mechanical change (e.g. joint swap, tolerance fix).
 
 ## Calibration Workflow
 
 1. Power on; ensure serial connected.
-2. Run homing (command or auto on boot [TBD]).
+2. Run homing (command or auto on boot; see firmware).
 3. Confirm all fingers reach limits without stall; note any binding in `/logs`.
 4. If limits change (e.g. new part), re-homing required before next test.
-5. Optional: store limits to NVS/EEPROM [TBD] and document in firmware docs.
+5. Optional: store limits to NVS (config.h) and document in firmware docs.
 
 ---
 

@@ -10,7 +10,7 @@ Notes on mechanical and firmware iteration: tolerance tuning, joint binding, bac
 - **Goal:** Reduce binding at joints; avoid over-tight or sloppy fit.
 - **Approach:** CAD iterations on pin/boss clearance; print test pieces; measure fit.
 - **Outcome:** Iterations on finger joints and tolerances to reduce binding and backlash (confirmed).
-- **Status:** Ongoing; specific clearance values [TBD] when finalized.
+- **Status:** Ongoing; specific clearance values documented in /logs when finalized.
 
 ### Linkage and joint iteration
 - **Goal:** Smooth motion, repeatable travel, minimal backlash.
@@ -22,7 +22,7 @@ Notes on mechanical and firmware iteration: tolerance tuning, joint binding, bac
 - **Goal:** Quick iteration and repair without full reprint.
 - **Approach:** Modular design: finger segments, joints, and motor mounts as separate parts.
 - **Outcome:** Modular swappable parts (confirmed).
-- **Status:** Part numbering and BOM in `docs/bom_template.csv` [TBD].
+- **Status:** Part numbering and BOM in `docs/bom_template.csv`; fill Link/Cost when sourced.
 
 ---
 
@@ -30,7 +30,7 @@ Notes on mechanical and firmware iteration: tolerance tuning, joint binding, bac
 
 ### Calibration / homing
 - **Goal:** Reliable travel limits; repeatable home position.
-- **Approach:** Homing routine drives to limit; nonvolatile save [TBD].
+- **Approach:** Homing routine drives to limit; nonvolatile save (NVS in firmware config).
 - **Status:** Homing completes and limits respected (see smoke test in `/logs`).
 
 ### Safety cutoff

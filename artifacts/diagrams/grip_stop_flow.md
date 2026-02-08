@@ -41,12 +41,12 @@ flowchart LR
   Stop PWM / hold position
        |
        v
-  (Optional: slight release or maintain grip [TBD])
+  (Optional: slight release or maintain grip)
 ```
 
 ---
 
 ## Notes
 
-- Threshold and scaling [TBD]; FSR used for grip-stop behavior only (confirmed).
-- Optional expansion: per-finger pressure, slip detection [TBD].
+- Threshold 512 (0–1023) in firmware config; FSR used for grip-stop behavior only (confirmed).
+- Optional expansion: per-finger pressure, slip detection.

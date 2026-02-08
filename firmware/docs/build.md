@@ -1,54 +1,54 @@
 # YOKO — Firmware Build
 
-Build and flash instructions. Toolchain [TBD — PlatformIO / ESP-IDF / Arduino IDE].
+Build and flash instructions. Toolchain: PlatformIO, ESP-IDF, or Arduino IDE with ESP32.
 
 ---
 
 ## Prerequisites
 
-- **Toolchain:** [TBD] — e.g. PlatformIO Core, ESP-IDF, or Arduino IDE with ESP32 board support
-- **Target board:** ESP32 (exact module [TBD])
-- **USB:** Cable for serial and flash
+- **Toolchain:** PlatformIO Core, ESP-IDF, or Arduino IDE with ESP32 board support (e.g. espressif/esp32).
+- **Target board:** ESP32 (e.g. ESP32-WROOM-32; exact module per your hardware).
+- **USB:** Cable for serial and flash.
 
 ---
 
-## Build Steps [TBD]
+## Build Steps
 
 ### Option A: PlatformIO
 
 ```text
-# [TBD] Example; adjust env name and board
-# pio run
-# pio run -t upload
+# From repo root or firmware/
+pio run
+pio run -t upload
+pio device monitor   # serial at 115200
 ```
 
 ### Option B: ESP-IDF
 
 ```text
-# [TBD] idf.py build
-# idf.py -p PORT flash monitor
+idf.py set-target esp32
+idf.py build
+idf.py -p /dev/cu.usbserial-* flash monitor
 ```
 
 ### Option C: Arduino IDE
 
-```text
-# [TBD] Open sketch; select ESP32 board; Build / Upload
-```
+Open `firmware/src/main.cpp` (or merge into a single .ino); select board "ESP32 Dev Module"; set port; Build and Upload.
 
 ---
 
 ## Configuration
 
-- **Pinout:** Edit `include/config.h` (PWM pins, FSR ADC, current sense [TBD])
-- **Thresholds:** `SAFETY_CURRENT_THRESHOLD_MA` — replace [PROVISIONAL] 1500 with verified value (see `/logs`)
-- **Serial baud:** `SERIAL_BAUD` in config.h
+- **Pinout:** Edit `include/config.h` or add pin defines; PWM and FSR pins in `hardware/wiring/pinout.md`.
+- **Thresholds:** `SAFETY_CURRENT_THRESHOLD_MA` — replace [PROVISIONAL] 1500 with verified value (see `/logs`).
+- **Serial baud:** 115200 in config.h (SERIAL_BAUD).
 
 ---
 
 ## Output
 
-- **Binary:** [TBD] — e.g. `.pio/build/.../firmware.bin` or `build/*.bin`
-- **Flash address:** [TBD] per ESP32 partition table
+- **Binary:** e.g. `.pio/build/esp32dev/firmware.bin` (PlatformIO) or `build/*.bin` (ESP-IDF).
+- **Flash:** Default partition table; adjust if using OTA or custom layout.
 
 ---
 

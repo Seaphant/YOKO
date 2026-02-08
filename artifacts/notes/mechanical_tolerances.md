@@ -9,12 +9,12 @@ Notes on joint clearance, backlash, binding, and print/assembly.
 - **Observed:** Binding at joints can cause uneven motion, stall, or excess current.
 - **Approach:** CAD iterations on pin/boss clearance; test print; adjust tolerance; re-print. Document binding points in `/logs` (e.g. "joint 3 binds at 45°").
 - **Outcome:** Iterations on finger joints and tolerances to reduce binding (confirmed).
-- **Specific values:** Clearance and print settings [TBD] when finalized.
+- **Specific values:** Clearance and print settings documented in hardware/stl/README.md and /logs when finalized.
 
 ## Backlash
 
 - **Goal:** Minimize backlash for repeatable grip and homing.
-- **Approach:** Linkage and joint design iteration; preload or fit [TBD]; measure repeatability in range-of-motion tests.
+- **Approach:** Linkage and joint design iteration; preload or fit as needed; measure repeatability in range-of-motion tests.
 - **Outcome:** Iterations to reduce backlash (confirmed).
 - **Measurement:** Range-of-motion and repeatability notes in `docs/testing_validation.md`; fill in `/logs` when run.
 
@@ -22,12 +22,12 @@ Notes on joint clearance, backlash, binding, and print/assembly.
 
 - **Design:** Modular finger segments, joints, motor mounts so parts can be swapped without full reprint.
 - **Use:** Quick iteration (e.g. try different clearance on one joint); repair (replace one phalanx).
-- **BOM:** See `docs/bom_template.csv`; part names and quantities [TBD] when locked.
+- **BOM:** See `docs/bom_template.csv`; part names and quantities filled when locked.
 
 ## Print and Assembly
 
-- **Print settings:** Generic settings [TBD]; material and layer height in BOM or hardware docs when confirmed.
-- **Assembly:** Sequence and torque [TBD]; strain relief and cable routing in `docs/wiring_notes.md`.
+- **Print settings:** See hardware/stl/README.md (e.g. 0.2 mm layer, PLA/PETG); material in BOM when confirmed.
+- **Assembly:** Sequence and torque per part; strain relief and cable routing in `docs/wiring_notes.md`.
 
 ---
 
