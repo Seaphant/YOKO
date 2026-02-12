@@ -1,6 +1,5 @@
 # YOKO — Images
 
-Conceptual images of the YOKO robotic hand: homemade/iterative build and CAD-style viewport screenshots.
 
 ---
 
@@ -14,6 +13,4 @@ Conceptual images of the YOKO robotic hand: homemade/iterative build and CAD-sty
 
 ---
 
-## Note
 
-These are **conceptual** images for illustration. The appearance image suggests a homemade, 3D-printed iterative build; the CAD images suggest typical CAD-software viewport screenshots. Replace with real photos of your build or actual CAD exports when available.
