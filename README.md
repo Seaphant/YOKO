@@ -4,17 +4,13 @@
 
 > **Project context:** Capstone-style personal project demonstrating mechanical design (CAD, 3D print, tolerances), embedded systems (ESP32, PWM, ADC), and systems integration. Suitable for internship portfolios and technical interviews.
 
-### Conceptual views
 
-**Homemade / iterative (3D-printed prototype)**  
-![YOKO appearance](docs/images/yoko-appearance.png)
-
-**CAD screenshots (conceptual—like Fusion 360 / Onshape viewport)**  
+CAD screenshots   
 | View 1 | View 2 |
 |--------|--------|
 | ![YOKO CAD screenshot 1](docs/images/yoko-cad-screenshot-1.png) | ![YOKO CAD screenshot 2](docs/images/yoko-cad-screenshot-2.png) |
 
-*Homemade: desk prototype, layer lines, wires; iterative build. CAD: conceptual viewport-style images. See [docs/images/](docs/images/) for files.*
+*Homemade: desk prototype, layer lines, wires;. See [docs/images/](docs/images/) for files.*
 
 ---
 
