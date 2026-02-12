@@ -1,6 +1,8 @@
 # YOKO — 3D-Printed Robotic Hand
 
-A CAD-designed, 3D-printed five-finger robotic hand with multi-joint fingers and swappable parts. ESP32 drives DC gear motors via PWM motor drivers; firmware includes calibration/homing limits, over-current stall cutoff, and FSR fingertip sensing for closed-loop grip-stop behavior.
+**University student project** — A CAD-designed, 3D-printed five-finger robotic hand with multi-joint fingers and swappable parts. Built as a portfolio piece for internship and embedded/mechatronics coursework. ESP32 drives DC gear motors via PWM motor drivers; firmware includes calibration/homing limits, over-current stall cutoff, and FSR fingertip sensing for closed-loop grip-stop behavior.
+
+> **Project context:** Capstone-style personal project demonstrating mechanical design (CAD, 3D print, tolerances), embedded systems (ESP32, PWM, ADC), and systems integration. Suitable for internship portfolios and technical interviews.
 
 ### Conceptual views
 
@@ -35,6 +37,27 @@ A CAD-designed, 3D-printed five-finger robotic hand with multi-joint fingers and
 - Calibration and homing routines with travel limits
 - Safety: over-current detection and stall cutoff
 - Debug workflow: serial logging and test markers for validation
+
+### Learning outcomes (portfolio / internship)
+- End-to-end build: CAD → STL → print → wiring → firmware → validation
+- Parts selection and compatibility (ESP32, motor drivers, FSR, power); see [Build process & materials](#build-process--materials)
+- Documented test procedures and logs for reproducible results
+
+---
+
+## Build process & materials
+
+A **single verified stack** keeps the build efficient and parts compatible:
+
+| Layer | Role | Compatible choices |
+|-------|------|--------------------|
+| MCU | Logic, PWM, ADC | ESP32 (3.3 V logic; 5 V tolerant inputs) |
+| Motor driver | PWM in, motor power out | TB6612FNG, DRV8833, or L298 (logic 2.7–5.5 V; motor 4.5–12 V) |
+| Motors | One per finger | 6 V or 12 V DC gear motors; match driver current (e.g. &lt; 1.2 A per channel for TB6612) |
+| Sensors | Fingertip force | FSR (e.g. Interlink FSR-402) with 3.3 V and 10 kΩ divider → ESP32 ADC |
+| Power | Supply | Single battery (6–12 V per driver spec); fuse recommended |
+
+**Full build steps and BOM:** [BUILD.md](BUILD.md) · **Why these parts work together:** [docs/parts_compatibility.md](docs/parts_compatibility.md)
 
 ---
 
@@ -120,7 +143,8 @@ Replace with verified measurements; see [Engineering Artifacts](#engineering-art
 
 ## Engineering Artifacts
 
-- **[/docs](docs/)** — Architecture, wiring notes, testing/validation, BOM template
+- **[BUILD.md](BUILD.md)** — Build order and materials (single verified stack; efficient path)
+- **[/docs](docs/)** — Architecture, wiring, testing, BOM, **parts compatibility**
 - **[/logs](logs/)** — Test log template, smoke test example, baseline metrics (sample/provisional)
 - **[/artifacts](artifacts/)** — Diagrams, notes, and test procedures (ASCII/Mermaid; no photo dependency)
   - **[/artifacts/diagrams](artifacts/diagrams)** — System block, finger linkage, power/wiring, homing state machine, FSR grip-stop flow, PWM control
@@ -133,9 +157,10 @@ Replace with verified measurements; see [Engineering Artifacts](#engineering-art
 
 | Path | Contents |
 |------|----------|
-| `firmware/` | ESP32 code: `src/` (main, motor_control, calibration, safety, sensors, logging), `include/`, `docs/` (build, serial, modules) |
-| `hardware/` | `cad/` (workflow, part naming), `stl/` (print settings, part list), `wiring/` (pinout, checklist) |
-| `docs/` | Architecture, wiring, testing, BOM template |
+| **BUILD.md** | Build order, BOM summary, and cross-refs (start here for a full build) |
+| `docs/` | Architecture, wiring, testing, BOM template, **parts_compatibility.md** |
+| `firmware/` | ESP32 code: `src/`, `include/`, `docs/` (build, serial, modules) |
+| `hardware/` | `cad/`, `stl/` (print settings), `wiring/` (pinout, checklist) |
 | `logs/` | Test log template and example/sample logs |
 | `artifacts/diagrams/` | System, finger, power, homing, grip-stop, PWM (Mermaid + ASCII) |
 | `artifacts/notes/` | Design, debugging, calibration, safety, tolerances |
@@ -145,9 +170,11 @@ Replace with verified measurements; see [Engineering Artifacts](#engineering-art
 
 ## How to Reproduce
 
-- **Print:** See [hardware/stl/README.md](hardware/stl/README.md) (e.g. 0.2 mm layer, 20% infill, PLA/PETG).
-- **Wiring:** See [docs/wiring_notes.md](docs/wiring_notes.md) and [hardware/wiring/](hardware/wiring/) (pinout in wiring/pinout.md).
-- **Firmware:** See [firmware/README.md](firmware/README.md) and [firmware/docs/build.md](firmware/docs/build.md); toolchain: PlatformIO, ESP-IDF, or Arduino IDE with ESP32.
+**Efficient path:** Follow [BUILD.md](BUILD.md) (order: BOM → print → wiring → flash → test).
+
+- **Print:** [hardware/stl/README.md](hardware/stl/README.md) — 0.2 mm layer, 20% infill, PLA/PETG.
+- **Wiring:** [docs/wiring_notes.md](docs/wiring_notes.md) and [hardware/wiring/](hardware/wiring/) (pinout: [hardware/wiring/pinout.md](hardware/wiring/pinout.md)).
+- **Firmware:** [firmware/README.md](firmware/README.md) and [firmware/docs/build.md](firmware/docs/build.md) — PlatformIO, ESP-IDF, or Arduino IDE with ESP32.
 
 ---
 

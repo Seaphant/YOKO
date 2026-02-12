@@ -69,3 +69,4 @@ flowchart TB
 
 - All current/threshold values are [PROVISIONAL] until verified; see `/logs` and `docs/testing_validation.md`.
 - Update pinout and config as your wiring and toolchain are finalized.
+- **Parts compatibility:** See [parts_compatibility.md](parts_compatibility.md) for a verified MCU/driver/motor/FSR/power stack.

@@ -23,7 +23,8 @@ Mechanical and electrical hardware: CAD, STL (3D-print), and wiring. 3D-printed 
 
 ## Cross-Reference
 
-- **BOM:** `../docs/bom_template.csv`
+- **Build order & BOM:** `../BUILD.md`
+- **BOM & parts compatibility:** `../docs/bom_template.csv`, `../docs/parts_compatibility.md`
 - **Wiring notes:** `../docs/wiring_notes.md`
 - **Diagrams:** `../artifacts/diagrams/` (system block, power, finger linkage)
 - **Tests:** `../artifacts/tests/` (smoke, current draw, stall)
