@@ -1,9 +1,10 @@
 Item,Qty,Notes,Link,Cost
-ESP32 dev board,1,Main MCU (e.g. ESP32-WROOM),See vendor,—
-DC gear motor,5,One per finger; match driver current,See vendor,—
-Motor driver,5,Or multi-channel board; PWM input,See vendor,—
-FSR,5,Fingertip sensing; analog or digital,See vendor,—
-Wiring / cable,1,Bulk; gauge per current (e.g. 22–24 AWG),See vendor,—
-Battery,1,Main supply; capacity/voltage per driver spec,See vendor,—
-Fasteners,1,Assorted (M2/M3 typical for small hand),See vendor,—
-3D filament,1,PLA or PETG; ~500 g–1 kg for full hand,See vendor,—
+ESP32 dev board,1,Main MCU; 3.3 V logic. e.g. ESP32-WROOM-32. See parts_compatibility.md.,See vendor,—
+DC gear motor,5,One per finger. 6 V or 12 V; match driver current (e.g. <1.2 A per ch for TB6612).,See vendor,—
+Motor driver,3–5,TB6612 (2 ch each) or 5× single-channel. PWM input; logic 2.7–5.5 V; motor 4.5–12 V. See parts_compatibility.md.,See vendor,—
+FSR,5,Fingertip force. e.g. Interlink FSR-402; use 10 kΩ divider to 3.3 V → ESP32 ADC.,See vendor,—
+10 kΩ resistor,5,Voltage divider for each FSR (FSR + 10k to GND; junction to ADC).,See vendor,—
+Wiring / cable,1,22–24 AWG signal; heavier for motor power. Common GND.,See vendor,—
+Battery,1,6–12 V per driver spec. Fuse recommended. See wiring_notes.md.,See vendor,—
+Fasteners,1,M2/M3 for small hand; match CAD hole sizes.,See vendor,—
+3D filament,1,PLA or PETG; ~500 g–1 kg. PETG preferred for joints. See hardware/stl/README.md.,See vendor,—
