@@ -11,7 +11,7 @@
 |--------|--------|
 | ![YOKO CAD screenshot 1](docs/images/yoko-cad-screenshot-1.png) | ![YOKO CAD screenshot 2](docs/images/yoko-cad-screenshot-2.png) |
 
-*Viewport-style CAD screenshots—grid, axes, simple UI; student/side-project look, not polished. Homemade build: desk prototype, layer lines, wires. See [docs/images/](docs/images/) for files.*
+*Viewport-style CAD screenshots—grid, axes, simple UI; student/side-project look. See [docs/images/](docs/images/) for files.*
 
 ---
 
