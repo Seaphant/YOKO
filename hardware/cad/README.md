@@ -4,6 +4,21 @@ CAD workflow, file naming, and export to STL for 3D printing. CAD-designed hand 
 
 ---
 
+## CAD Model (OpenSCAD)
+
+- **yoko_robotic_hand.scad** — Parametric OpenSCAD model of the full assembly (5 fingers, 3 phalanxes each, joints, palm, motor mounts)
+- Open [yoko_robotic_hand.scad](yoko_robotic_hand.scad) in OpenSCAD to view, render (F6), and export STL parts
+- Individual part export: uncomment the relevant line at the bottom of the file, render, then File → Export as STL
+
+## CAD Images
+
+| File | Description |
+|------|-------------|
+| [cad-images/yoko-cad-viewport-1.png](cad-images/yoko-cad-viewport-1.png) | Front view — 5 fingers, phalanxes, joints, palm, motor mounts |
+| [cad-images/yoko-cad-viewport-2.png](cad-images/yoko-cad-viewport-2.png) | Side view — profile of full assembly |
+
+---
+
 ## Workflow
 
 1. **Design:** CAD tool [TBD — e.g. Fusion 360, Onshape, FreeCAD]. Parts: finger segments (phalanxes), joints, motor mounts, base/palm.

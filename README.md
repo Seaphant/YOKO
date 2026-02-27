@@ -9,9 +9,9 @@
 
 | View 1 | View 2 |
 |--------|--------|
-| ![YOKO CAD screenshot 1](docs/images/yoko-cad-screenshot-1.png) | ![YOKO CAD screenshot 2](docs/images/yoko-cad-screenshot-2.png) |
+| ![YOKO CAD screenshot 1](hardware/cad/cad-images/yoko-cad-viewport-1.png) | ![YOKO CAD screenshot 2](hardware/cad/cad-images/yoko-cad-viewport-2.png) |
 
-*Viewport-style CAD screenshots—grid, axes, simple UI; student/side-project look. See [docs/images/](docs/images/) for files.*
+*Viewport-style CAD screenshots—5 fingers, 3 phalanxes each, joints, palm, motor mounts. See [hardware/cad/cad-images/](hardware/cad/cad-images/) and [docs/images/](docs/images/) for all images.*
 
 ---
 
