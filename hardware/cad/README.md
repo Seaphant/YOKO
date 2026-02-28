@@ -10,11 +10,17 @@ CAD workflow, file naming, and export to STL for 3D printing. CAD-designed hand 
 - Open [yoko_robotic_hand.scad](yoko_robotic_hand.scad) in OpenSCAD to view, render (F6), and export STL parts
 - Individual part export: uncomment the relevant line at the bottom of the file, render, then File → Export as STL
 
-## CAD Images
+## CAD Images (Real Renders)
+
+Rendered from geometry built to project specs. Regenerate with:
+
+```bash
+python3 render_hand.py
+```
 
 | File | Description |
 |------|-------------|
-| [cad-images/yoko-cad-viewport-1.png](cad-images/yoko-cad-viewport-1.png) | Front view — 5 fingers, phalanxes, joints, palm, motor mounts |
+| [cad-images/yoko-cad-viewport-1.png](cad-images/yoko-cad-viewport-1.png) | Front view — 5 fingers, 3 phalanxes each, palm |
 | [cad-images/yoko-cad-viewport-2.png](cad-images/yoko-cad-viewport-2.png) | Side view — profile of full assembly |
 
 ---

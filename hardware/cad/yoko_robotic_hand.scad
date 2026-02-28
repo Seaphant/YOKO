@@ -52,10 +52,8 @@ module joint() {
 module motor_mount() {
   difference() {
     cube([mount_l, mount_w, mount_h], center=true);
-    // Motor shaft hole
     cylinder(h=mount_h+2, d=6, center=true);
-    // Mounting holes M2
-    for (dx=[-10,10], dy=[-8,8]) 
+    for (dx=[-9,9], dy=[-7,7]) 
       translate([dx, dy, 0]) cylinder(h=mount_h+2, d=2.2, center=true);
   }
 }
@@ -104,9 +102,9 @@ module yoko_assembly() {
   
   for (i = [0:4]) {
     color([0.7 + i*0.06, 0.75, 0.85]) 
-      finger(finger_angles[i], finger_y_offset[i]);
+      finger(finger_angles[i]);
     color([0.6, 0.6, 0.65]) 
-      finger_motor_mount(finger_angles[i], finger_y_offset[i]);
+      finger_motor_mount(finger_angles[i]);
   }
 }
 
