@@ -8,7 +8,7 @@ ESP32 firmware for the YOKO robotic hand: PWM motor control, calibration/homing,
 
 - **Target:** ESP32
 - **Modules:** motor_control, calibration, safety, sensors, logging (see `docs/architecture.md` in repo root)
-- **Toolchain:** [TBD — PlatformIO / ESP-IDF / Arduino IDE]; do not overclaim
+- **Toolchain:** PlatformIO, ESP-IDF, or Arduino IDE
 - **Build:** See [firmware/docs/build.md](docs/build.md)
 
 ---

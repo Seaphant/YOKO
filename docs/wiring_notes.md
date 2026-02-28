@@ -1,6 +1,4 @@
-# YOKO — Wiring Notes
-
-Generic wiring and safety notes. No specific part numbers unless confirmed.
+# Wiring Notes
 
 ---
 

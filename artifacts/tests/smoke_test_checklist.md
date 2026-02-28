@@ -1,6 +1,6 @@
-# YOKO — Smoke Test Checklist
+# Smoke Test Checklist
 
-Quick post-assembly or post-change check: power-on, homing, cutoff, and basic behavior. Use this with serial connected and `/logs` ready.
+Power-on, homing, cutoff, basic behavior. Serial at 115200; log results to `/logs`.
 
 ---
 
