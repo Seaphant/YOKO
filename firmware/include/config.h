@@ -9,6 +9,23 @@
 /* Number of fingers / motor channels */
 #define FINGER_COUNT 5
 
+/* PWM output pins (Thumb, Index, Middle, Ring, Pinky) — sync hardware/wiring/pinout.md */
+#define PWM_PIN_THUMB   25
+#define PWM_PIN_INDEX   26
+#define PWM_PIN_MIDDLE  27
+#define PWM_PIN_RING    32
+#define PWM_PIN_PINKY   33
+
+/* FSR ADC pins (Thumb..Pinky) */
+#define FSR_PIN_THUMB   34
+#define FSR_PIN_INDEX   35
+#define FSR_PIN_MIDDLE  36
+#define FSR_PIN_RING    39
+#define FSR_PIN_PINKY   4
+
+/* Current sense: shunt + ADC (GPIO 38, ADC1) */
+#define CURRENT_SENSE_PIN 38
+
 /* PWM: 1 kHz, 8-bit resolution; adjust per driver spec */
 #define PWM_FREQ_HZ 1000
 #define PWM_RESOLUTION_BITS 8

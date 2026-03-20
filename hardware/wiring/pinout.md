@@ -52,4 +52,4 @@ ESP32 pin assignments for motor drivers (PWM), FSR (ADC), and optional current s
 
 ## Sync with Firmware
 
-After finalizing pins, add `#define PWM_PIN_*` and `FSR_PIN_*` in `../../firmware/include/config.h` (or in .cpp) and use in `motor_control.cpp`, `sensors.cpp`, `safety.cpp`. Document here and in wiring checklist.
+Pins are defined in `../../firmware/include/config.h` (PWM_PIN_*, FSR_PIN_*, CURRENT_SENSE_PIN). Use in `motor_control.cpp`, `sensors.cpp`, `safety.cpp`.
