@@ -1,0 +1,13 @@
+Item,Qty,Specifications,Vendor,Part Number / Link,Unit Cost,Notes
+ESP32 dev board,1,ESP32-WROOM-32 DevKitC; 3.3 V logic; USB-C,Amazon,https://www.amazon.com/dp/B08D5ZD528,$8.99,CP2102 USB-serial; any ESP32-WROOM-32 clone works
+DC gear motor (N20),5,6 V 100 RPM; 3 mm D-shaft; 12 mm diameter,Amazon,https://www.amazon.com/dp/B07JLXWWTB,$3.50 ea,Stall current ~1.8 A; match driver rating
+Motor driver (TB6612FNG),3,Dual H-bridge; 1.2 A/ch; 2.7-5.5 V logic; 4.5-13.5 V motor,SparkFun / Amazon,SparkFun ROB-14450,$5.95 ea,2 channels each; 5 channels used across 3 boards
+FSR (Interlink 402),5,0.5 in round; 0.2-20 N range; piezoresistive,Interlink Electronics,https://buyinterlinkelectronics.com/products/fsr-model-402,$2.99 ea,Solder-tab variant (P/N 30-81794)
+Resistor 10 kΩ,5,1/4 W; through-hole; ±5%,Any,Generic,$0.10 ea,Voltage divider for each FSR → ESP32 ADC (3.3 V)
+INA180 current sense amp,1,High-side; 20x gain; SOT-23-5,Digi-Key,TI INA180A1IDBVR,$1.25,With 0.1 Ω shunt: 1 A = 2 V output
+Shunt resistor 0.1 Ω,1,1 W; ±1%; 2512 package,Digi-Key,Generic 2512 0.1R,$0.50,Bus current sense on motor power rail
+Wire / hookup cable,1 lot,22-24 AWG stranded; silicone insulated,Amazon,Generic assortment,$8.99,Signal + motor power; common GND
+Battery / power supply,1,6 V 5 A bench supply (dev) or 2S LiPo 7.4 V (portable),Amazon,Any regulated 6 V supply,$15.00,Fuse inline at 6 A recommended
+Blade fuse + holder,1,6 A automotive blade fuse; inline holder,Amazon,Generic,$3.50,Between battery and motor driver VIN
+M2 / M3 fasteners,1 kit,Assorted M2×6 and M3×8 socket head cap screws + nuts,Amazon,Generic assortment,$7.99,Match CAD hole sizes (2.2 mm / 3.2 mm)
+3D filament (PETG),1 kg,1.75 mm; PETG preferred for joint durability,Amazon,eSUN PETG 1 kg,$18.99,PLA acceptable for palm/non-wear parts

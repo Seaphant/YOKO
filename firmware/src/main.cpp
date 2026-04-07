@@ -1,10 +1,15 @@
 /**
- * YOKO — Main loop
- * Setup: init modules, print banner, start homing.
- * Loop: calibration update, safety check, motor update, sensors, logging.
- * Toolchain: [TBD — PlatformIO / ESP-IDF / Arduino IDE]
+ * YOKO — Main firmware entry point (Arduino framework on ESP32)
+ *
+ * Loop priority order:
+ *   1. Safety — kill motors immediately on over-current
+ *   2. Calibration — run homing state machine until all fingers indexed
+ *   3. Sensors — read FSR fingertips, apply grip-stop
+ *   4. Motors — ramp PWM outputs toward targets
+ *   5. Telemetry — periodic debug output
  */
 
+#include <Arduino.h>
 #include "config.h"
 #include "motor_control.h"
 #include "calibration.h"
@@ -12,47 +17,68 @@
 #include "sensors.h"
 #include "logging.h"
 
-/* [TBD] Replace with actual framework setup (Arduino setup(), ESP-IDF app_main(), etc.) */
-void setup(void) {
-  /* Serial for debug and test markers */
-  /* Serial.begin(SERIAL_BAUD); [TBD] */
+static unsigned long last_tick;
+static unsigned long telemetry_timer;
 
+/* Telemetry output interval */
+static const unsigned long TELEMETRY_INTERVAL_MS = 500;
+
+void setup(void) {
   logging_banner();
 
   motor_control_init();
-  calibration_init();
   safety_init();
   sensors_init();
+  calibration_init();
 
-  /* Start homing on boot [TBD] or wait for command */
+  logging_state("boot_complete");
+
   calibration_start_homing();
+
+  last_tick = millis();
+  telemetry_timer = millis();
 }
 
 void loop(void) {
-  /* Safety first: check current; disable drive if over threshold (~1.5 A [PROVISIONAL]) */
+  unsigned long now = millis();
+  if (now - last_tick < LOOP_INTERVAL_MS) return;
+  last_tick = now;
+
+  /* 1. Safety: check bus current, latch fault if over threshold */
   safety_update();
   if (safety_in_fault()) {
     motor_control_stop_all();
-    /* Clear fault path [TBD] */
-    /* continue; */
-  }
-
-  /* Calibration / homing state machine */
-  calibration_update();
-  if (!calibration_is_ready()) {
-    motor_control_update();
-    /* delay or yield [TBD] */
     return;
   }
 
-  /* FSR grip stop: stop closing if contact threshold reached */
-  sensors_update();
-  if (sensors_grip_stop_triggered()) {
-    /* Stop or hold [TBD] */
+  /* 2. Calibration: run homing until complete */
+  calibration_update();
+  if (!calibration_is_ready()) {
+    motor_control_update();
+    return;
   }
 
-  /* Normal operation: apply target duties with rate limiting */
+  /* 3. Sensors: read FSR, enforce grip-stop */
+  sensors_update();
+  if (sensors_grip_stop_triggered()) {
+    for (int i = 0; i < FINGER_COUNT; i++) {
+      if (sensors_read_fsr(i) >= FSR_GRIP_STOP_THRESHOLD) {
+        int held = motor_control_get_duty(i);
+        motor_control_set_duty(i, held);
+      }
+    }
+  }
+
+  /* 4. Motors: ramp toward targets */
   motor_control_update();
 
-  /* [TBD] delay or yield */
+  /* 5. Telemetry: periodic snapshot */
+  if (now - telemetry_timer >= TELEMETRY_INTERVAL_MS) {
+    telemetry_timer = now;
+    int bus_mA = safety_read_current_mA();
+    for (int i = 0; i < FINGER_COUNT; i++) {
+      logging_telemetry(i, motor_control_get_duty(i),
+                        sensors_read_fsr(i), bus_mA);
+    }
+  }
 }

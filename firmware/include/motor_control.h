@@ -1,7 +1,6 @@
 /**
  * YOKO — Motor control module
- * PWM interfaces to motor drivers; per-finger channels; rate limiting.
- * See docs/architecture.md (motor_control).
+ * PWM via ESP32 LEDC peripheral; per-finger channels with slew-rate limiting.
  */
 
 #ifndef MOTOR_CONTROL_H
@@ -9,16 +8,17 @@
 
 #include "config.h"
 
-/* Initialize PWM pins and driver state */
 void motor_control_init(void);
 
-/* Set target duty for one finger. Channel 0..FINGER_COUNT-1; duty 0..255 (8-bit) */
+/* Set target duty for one finger. channel: 0..FINGER_COUNT-1, duty: 0..PWM_MAX_DUTY */
 void motor_control_set_duty(int channel, int duty);
 
-/* Update outputs with rate limiting (call from main loop) */
+int motor_control_get_duty(int channel);
+
+/* Ramp current duty toward target with rate limiting. Call every loop tick. */
 void motor_control_update(void);
 
-/* Emergency stop: all channels to neutral/off */
+/* Immediate stop: all channels to zero, bypassing ramp */
 void motor_control_stop_all(void);
 
 #endif /* MOTOR_CONTROL_H */

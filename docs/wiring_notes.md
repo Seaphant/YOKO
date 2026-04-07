@@ -49,4 +49,4 @@ Keep wires short where possible; use strain relief at connectors and moving join
 ## Status
 
 - Specific part numbers, wire gauges, and connector types: document in BOM and pinout when confirmed
-- See `/logs` for test dates and results; see `bom_template.csv` for BOM placeholders.
+- See `/logs` for test dates and results; see `bom.csv` for BOM placeholders.

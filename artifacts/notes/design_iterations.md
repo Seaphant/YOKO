@@ -22,7 +22,7 @@ Notes on mechanical and firmware iteration: tolerance tuning, joint binding, bac
 - **Goal:** Quick iteration and repair without full reprint.
 - **Approach:** Modular design: finger segments, joints, and motor mounts as separate parts.
 - **Outcome:** Modular swappable parts (confirmed).
-- **Status:** Part numbering and BOM in `docs/bom_template.csv`; fill Link/Cost when sourced.
+- **Status:** Part numbering and BOM in `docs/bom.csv`; fill Link/Cost when sourced.
 
 ---
 

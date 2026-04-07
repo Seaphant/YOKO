@@ -1,7 +1,6 @@
 /**
  * YOKO — Sensors module
- * FSR fingertips for closed-loop grip stop. Optional expansion [TBD].
- * See docs/architecture.md (sensors).
+ * FSR fingertip pressure via ESP32 ADC with EMA filtering.
  */
 
 #ifndef SENSORS_H
@@ -9,16 +8,15 @@
 
 #include "config.h"
 
-/* Initialize FSR ADC/pins */
 void sensors_init(void);
 
-/* Read FSR value(s). Return raw or scaled [TBD]. Per-finger or combined. */
+/* Get filtered FSR reading for a finger (0..FINGER_COUNT-1). Returns 0-4095. */
 int sensors_read_fsr(int channel);
 
-/* True if any FSR above grip-stop threshold (closed-loop stop) */
+/* True if any finger's FSR exceeds grip-stop threshold */
 int sensors_grip_stop_triggered(void);
 
-/* Update readings; call from main loop */
+/* Sample all FSR channels and update filtered values. Call every loop tick. */
 void sensors_update(void);
 
 #endif /* SENSORS_H */

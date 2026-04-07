@@ -6,7 +6,7 @@ Pre-assembly and continuity checks before power-on. Use with `../../artifacts/te
 
 ## Pre-Assembly
 
-- [ ] **BOM:** All parts present (ESP32, drivers, motors, FSR, wiring, battery, fuse [recommended]); see `../../docs/bom_template.csv`.
+- [ ] **BOM:** All parts present (ESP32, drivers, motors, FSR, wiring, battery, fuse [recommended]); see `../../docs/bom.csv`.
 - [ ] **Pinout:** Pinout table in `pinout.md` matches your wiring and firmware `config.h`.
 - [ ] **Connectors:** Correct gender and pinout at hand base and driver/ESP32 side.
 - [ ] **Strain relief:** Cable exit and flex points secured; no bare conductors at joints.

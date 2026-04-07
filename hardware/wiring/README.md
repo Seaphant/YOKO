@@ -36,4 +36,4 @@ Full diagram: `../../artifacts/diagrams/power_wiring.md`. Safety and measurement
 - **Wiring notes:** `../../docs/wiring_notes.md`
 - **Power diagram:** `../../artifacts/diagrams/power_wiring.md`, `system_block.md`
 - **Firmware config:** `../../firmware/include/config.h` (pins; sync with pinout.md)
-- **BOM:** `../../docs/bom_template.csv`
+- **BOM:** `../../docs/bom.csv`

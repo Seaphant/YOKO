@@ -45,5 +45,5 @@ Generic settings; adjust per material and part. Document any changes in `/logs` 
 ## Cross-Reference
 
 - **CAD:** `../cad/README.md`
-- **BOM:** `../../docs/bom_template.csv` (3D filament row)
+- **BOM:** `../../docs/bom.csv` (3D filament row)
 - **Design iterations:** `../../artifacts/notes/design_iterations.md`

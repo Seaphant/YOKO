@@ -12,7 +12,7 @@
 | Fasteners | — | M2/M3 |
 | Filament | ~500 g | PLA or PETG |
 
-Details: [bom_template.csv](docs/bom_template.csv), [parts_compatibility.md](docs/parts_compatibility.md)
+Details: [bom.csv](docs/bom.csv), [parts_compatibility.md](docs/parts_compatibility.md)
 
 ## Order
 
@@ -27,7 +27,7 @@ Details: [bom_template.csv](docs/bom_template.csv), [parts_compatibility.md](doc
 
 | Step | Doc |
 |------|-----|
-| BOM | [bom_template.csv](docs/bom_template.csv) |
+| BOM | [bom.csv](docs/bom.csv) |
 | Print | [hardware/stl/README.md](hardware/stl/README.md) |
 | Wiring | [hardware/wiring/](hardware/wiring/), [wiring_notes](docs/wiring_notes.md) |
 | Firmware | [firmware/docs/build.md](firmware/docs/build.md) |

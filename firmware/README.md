@@ -1,15 +1,27 @@
 # YOKO — Firmware
 
-ESP32 firmware for the YOKO robotic hand: PWM motor control, calibration/homing, over-current cutoff, and FSR grip-stop.
+ESP32 firmware for the YOKO robotic hand: PWM motor control, stall-based homing, overcurrent protection, and FSR grip-stop.
+
+---
+
+## Quick Start
+
+```bash
+cd firmware
+pio run -e esp32          # compile
+pio run -e esp32 -t upload  # flash
+pio device monitor        # serial output at 115200 baud
+```
+
+Requires [PlatformIO CLI](https://docs.platformio.org/en/latest/core/installation.html) or the PlatformIO IDE extension.
 
 ---
 
 ## Overview
 
-- **Target:** ESP32
-- **Modules:** motor_control, calibration, safety, sensors, logging (see `docs/architecture.md` in repo root)
-- **Toolchain:** PlatformIO, ESP-IDF, or Arduino IDE
-- **Build:** See [firmware/docs/build.md](docs/build.md)
+- **Target:** ESP32-WROOM-32 (Arduino framework)
+- **Build system:** PlatformIO (`platformio.ini`)
+- **Loop rate:** 100 Hz (10 ms tick)
 
 ---
 
@@ -17,21 +29,22 @@ ESP32 firmware for the YOKO robotic hand: PWM motor control, calibration/homing,
 
 | Path | Contents |
 |------|----------|
-| `src/` | Main loop and module source (motor_control, calibration, safety, sensors) |
-| `include/` | Headers and config (pinout, thresholds, channel count) |
+| `src/` | Main loop and module source |
+| `include/` | Headers and config (pinout, thresholds, calibration) |
 | `docs/` | Build instructions, serial protocol, module overview |
+| `platformio.ini` | Build configuration |
 
 ---
 
-## Module Summary
+## Modules
 
 | Module | Role |
 |--------|------|
-| **motor_control** | PWM to drivers, per-finger channels, rate limiting |
-| **calibration** | Homing routine, travel limits, NVS save (config.h) |
-| **safety** | Over-current detection, stall cutoff (~1.5 A [PROVISIONAL]) |
-| **sensors** | FSR read, grip-stop threshold |
-| **logging** | Serial debug, test markers for `/logs` |
+| **motor_control** | ESP32 LEDC PWM, per-finger channels, slew-rate limiting |
+| **calibration** | Sequential stall-based homing, NVS persistence |
+| **safety** | Shunt + INA180 current sense, debounced overcurrent cutoff |
+| **sensors** | FSR ADC reads, EMA filtering, grip-stop detection |
+| **logging** | Structured serial output (`[YOKO]` prefix), telemetry |
 
 ---
 
@@ -39,4 +52,5 @@ ESP32 firmware for the YOKO robotic hand: PWM motor control, calibration/homing,
 
 - **Architecture:** `../docs/architecture.md`
 - **Diagrams:** `../artifacts/diagrams/` (homing, grip-stop, PWM)
-- **Tests:** `../artifacts/tests/`, `../logs/`
+- **Test data:** `../logs/002_baseline_current_draw.md`
+- **Pinout:** `../hardware/wiring/pinout.md`
