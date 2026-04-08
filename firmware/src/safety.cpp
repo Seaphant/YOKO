@@ -10,7 +10,7 @@
 #include "logging.h"
 
 static volatile int fault_flag;
-static int debounce_counter;
+static volatile int debounce_counter;
 
 void safety_init(void) {
   fault_flag = 0;
