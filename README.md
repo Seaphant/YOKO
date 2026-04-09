@@ -40,6 +40,7 @@ CAD: [hardware/cad/](hardware/cad/). OpenSCAD parametric model + Python render s
 
 | Path | Contents |
 |------|----------|
+| `.github/` | CI workflow (PlatformIO firmware build) |
 | `hardware/` | CAD, STL, wiring |
 | `firmware/` | ESP32 source (PlatformIO), build docs |
 | `docs/` | Architecture, wiring, BOM, testing |
