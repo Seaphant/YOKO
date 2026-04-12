@@ -78,8 +78,8 @@ void calibration_update(void) {
 
       if (current_mA >= HOMING_STALL_MA) {
         /* Stall detected — finger reached its mechanical stop */
-        motor_control_set_duty(current_finger, 0);
         limits[current_finger] = motor_control_get_duty(current_finger);
+        motor_control_set_duty(current_finger, 0);
         logging_debug("Finger %d limit at duty %d (stall %d mA)",
                       current_finger, limits[current_finger], current_mA);
         enter_state(CAL_AT_LIMIT);
