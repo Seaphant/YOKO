@@ -4,9 +4,11 @@
  * Loop priority order:
  *   1. Safety — kill motors immediately on over-current
  *   2. Calibration — run homing state machine until all fingers indexed
- *   3. Sensors — read FSR fingertips, apply grip-stop
- *   4. Motors — ramp PWM outputs toward targets
- *   5. Telemetry — periodic debug output
+ *   3. Limit enforcement — clamp duty to homing-learned limits
+ *   4. Sensors — read FSR fingertips, apply grip-stop
+ *   5. Motors — ramp PWM outputs toward targets
+ *   6. Telemetry — periodic debug output
+ *   7. Serial commands — process incoming commands
  */
 
 #include <Arduino.h>
@@ -16,6 +18,7 @@
 #include "safety.h"
 #include "sensors.h"
 #include "logging.h"
+#include "serial_cmd.h"
 
 static unsigned long last_tick;
 static unsigned long telemetry_timer;
@@ -30,6 +33,7 @@ void setup(void) {
   safety_init();
   sensors_init();
   calibration_init();
+  serial_cmd_init();
 
   logging_state("boot_complete");
 
@@ -58,7 +62,16 @@ void loop(void) {
     return;
   }
 
-  /* 3. Sensors: read FSR, enforce grip-stop */
+  /* 3. Enforce calibration limits on all active targets */
+  for (int i = 0; i < FINGER_COUNT; i++) {
+    int limit = calibration_get_limit(i);
+    int duty  = motor_control_get_duty(i);
+    if (duty > limit) {
+      motor_control_set_duty(i, limit);
+    }
+  }
+
+  /* 4. Sensors: read FSR, enforce grip-stop */
   sensors_update();
   if (sensors_grip_stop_triggered()) {
     for (int i = 0; i < FINGER_COUNT; i++) {
@@ -69,10 +82,10 @@ void loop(void) {
     }
   }
 
-  /* 4. Motors: ramp toward targets */
+  /* 5. Motors: ramp toward targets */
   motor_control_update();
 
-  /* 5. Telemetry: periodic snapshot */
+  /* 6. Telemetry: periodic snapshot */
   if (now - telemetry_timer >= TELEMETRY_INTERVAL_MS) {
     telemetry_timer = now;
     int bus_mA = safety_read_current_mA();
@@ -81,4 +94,7 @@ void loop(void) {
                         sensors_read_fsr(i), bus_mA);
     }
   }
+
+  /* 7. Serial commands: process incoming */
+  serial_cmd_update();
 }

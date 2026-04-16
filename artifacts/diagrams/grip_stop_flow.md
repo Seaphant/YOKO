@@ -48,5 +48,5 @@ flowchart LR
 
 ## Notes
 
-- Threshold 512 (0–1023) in firmware config; FSR used for grip-stop behavior only (confirmed).
+- Threshold 2048 (0–4095, 12-bit ADC) in firmware config; FSR used for grip-stop behavior only (confirmed).
 - Optional expansion: per-finger pressure, slip detection.

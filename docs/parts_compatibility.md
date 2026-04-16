@@ -21,7 +21,7 @@ One battery for motors; common GND. ESP32 via USB or 3.3 V regulator.
 ## FSR ↔ ESP32
 
 - **FSR:** Variable R; voltage divider: 3.3 V → FSR → ADC; FSR → 10 kΩ → GND
-- **ADC:** 0–3.3 V, 10-bit; grip-stop threshold 512 in config.h
+- **ADC:** 0–3.3 V, 12-bit (ESP32); grip-stop threshold 2048 in config.h
 - **Wiring:** Short runs; away from motor wires
 
 ## Mechanical

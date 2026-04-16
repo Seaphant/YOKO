@@ -29,7 +29,7 @@ ESP32 pin assignments for motor drivers (PWM), FSR (ADC), and optional current s
 | Ring   | 39 (ADC1_CH3)             | FSR 4 |
 | Pinky  | 4  (ADC2_CH0)             | FSR 5 (ADC2 if WiFi not used) |
 
-- **Grip-stop threshold:** 512 (0–1023 raw) in firmware `sensors.cpp` / config.h (FSR_GRIP_STOP_THRESHOLD).
+- **Grip-stop threshold:** 2048 (0–4095 raw, 12-bit ADC) in firmware `config.h` (FSR_GRIP_STOP_THRESHOLD).
 
 ---
 
